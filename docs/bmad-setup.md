@@ -68,7 +68,7 @@ uv run _bmad/scripts/resolve_config.py --project-root $bmadProjectRoot --key cor
 | PRD 技能配置 | 模板与输出目录配置可正常解析，未启动 PRD 创作 |
 | 不带个人配置的克隆模拟 | 从 Git 暂存区导出的副本不含个人配置，仍可解析团队中文设置 |
 | bmad-build 渲染检查 | 副本内官方渲染脚本成功生成 workflow.md；只验证加载，没有执行开发工作流 |
-| 现有产品简报 | 与安装前存档逐字节一致 |
+| 安装时的产品简报保留检查 | 配置完成时与安装前存档逐字节一致；后续两种报名模式的需求修订另见决策日志 D-003 |
 | bmad-help 方向检查 | 已有产品简报仍为初稿；下一必经规划步骤是 bmad-prd，此前可用 bmad-product-brief 完善简报 |
 
 受限环境下，渲染脚本曾返回 Windows 拒绝访问；同一脚本在标准权限环境通过，未修改官方代码。新开 Codex 项目聊天后的技能自动发现尚未验证。
@@ -98,6 +98,6 @@ uv run _bmad/scripts/resolve_config.py --project-root $bmadProjectRoot --key cor
 | `bmad-build`、`bmad-code-review` | 实施与评审 |
 | `bmad-retrospective` | 结合实际过程证据复盘 |
 
-产品简报目前仍是分析准备阶段的初稿。接下来先完善尚未确定的报名规则、真实使用场景和组员分工，再启动 `bmad-prd`。本次配置没有生成 PRD、架构、故事或软件实现。
+产品简报仍为初稿，安装之后已使用 `bmad-product-brief` 的 Update 流程增加发起者审核模式，并记录对应的 memlog 与 D-003。接下来先完善尚未确定的规则、真实使用场景和组员分工，再启动 `bmad-prd`。本次配置及简报修订没有生成 PRD、架构、故事或软件实现。
 
 课程特有要求继续以作业核对表为准。若 BMAD 默认输出路径或格式与课程命名不同，应在 README 中提供明确入口；课程要求的 `project-context.md`、根目录决策日志及复盘不能因工具默认行为不同而省略。
