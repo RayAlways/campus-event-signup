@@ -25,3 +25,8 @@ Desktop.ini
 # Local dependency caches
 .gradle/
 node_modules/
+
+# BMAD personal configuration and Python runtime caches
+_bmad/config.user.toml
+__pycache__/
+*.pyc

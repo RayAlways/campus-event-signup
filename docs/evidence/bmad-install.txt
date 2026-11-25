@@ -1,0 +1,105 @@
+BMAD 6.12.1 installer output, 2026-11-25
+ANSI control sequences removed; absolute project path replaced by {project-root}.
+
+| +-Update Available-----------------------------------------------------------+
+| |  You are using version 6.12.1 but 6.12.4 is available.                     |
+| |                                                                            |
+| |  To update, exit and first run:                                            |
+| |    npm cache clean --force && npx bmad-method@latest install               |
+| +----------------------------------------------------------------------------+
+| +----------------------------------------------------------------------------+
+| |                      ██████╗ ███╗   ███╗ █████╗ ██████╗ ™                  |
+| |                      ██╔══██╗████╗ ████║██╔══██╗██╔══██╗                   |
+| |                      ██████╔╝██╔████╔██║███████║██║  ██║                   |
+| |                      ██╔══██╗██║╚██╔╝██║██╔══██║██║  ██║                   |
+| |                      ██████╔╝██║ ╚═╝ ██║██║  ██║██████╔╝                   |
+| |                       ╚═════╝ ╚═╝     ╚═╝╚═╝  ╚═╝╚═════╝                   |
+| |                          Agile Ai Driven Development                       |
+| |                            the agile way to do AiDD                        |
+| |                   Build More, Architect Dreams · © BMad Code               |
+| +----------------------------------------------------------------------------+
+|
+•  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+|
+|  Agile AI-Driven Development. Powered by BMad Core and a growing module ecosystem.
+|  Install official and community modules during setup to customize your experience.
+|
+|  🌟 100% free. 100% open source. Always.
+|     No paywalls. No gated content. Knowledge shared, not sold.
+|
+|  🐍 REQUIRED: uv (https://docs.astral.sh/uv/) runs the Python scripts BMAD
+|     skills rely on (`uv run <script>`) and provisions the interpreter itself.
+|     Without it, bmad-build and bmad-build-auto halt on activation.
+|     If it's not set up yet, ask your AI agent to "install and set up uv for me".
+|
+|  🌐 CONNECT:
+|    Website:   https://bmadcode.com/
+|    Discord:   https://discord.gg/gk8jAdXWmj
+|    YouTube:   https://www.youtube.com/@BMadCode
+|    X:         https://x.com/BMadCode
+|    Facebook:  https://facebook.com/@BMadCode
+|
+|  ⭐ SUPPORT THE PROJECT:
+|    Star us:   https://github.com/bmad-code-org/BMAD-METHOD/
+|    Donate:    https://buymeacoffee.com/bmad
+|    Corporate sponsorship and speaking inquiries: contact@bmadcode.com
+|
+|  Docs, blog, and latest updates: https://bmadcode.com/
+|
+|  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+|
+|
+*  ✅ Python UV check pass (uv 0.12.13 detected).
+|
+•  Using directory from command-line: {project-root}
+|
+•  Using modules from command-line: bmm
+|
+•  Using tools from command-line: codex
+|
+|  Selected tools:
+|    • Codex ⭐
+|
+•  Using user name from command-line: RayAlways
+|
+•  Using communication language from command-line: Chinese
+|
+•  Using document output language from command-line: Chinese
+|
+•  Using output folder from command-line: _bmad-output
+|
+•  Using default configuration for BMM Module
+|
+o  Shared scripts installed
+|
+•  Installing coreo  Installing bmmo  2 module(s) installed
+|
+o  Module directories created
+|
+•  Generating manifestso  Generating manifestsO  Generating manifests0  Generating manifests•  Generating manifestso  Generating manifestsO  Generating manifests0  Generating manifests•  Generating manifests.o  Generating manifests.O  Generating manifests.0  Generating manifests.•  Generating manifests.o  Generating manifests.O  Generating manifests.|
+•  Applied --set overrides: core.project_name → config.toml, bmm.user_skill_level → config.user.toml
+o  Configurations generated
+|
+•  Setting up codex...
+|
+*  codex configured: 29 skills → .agents/skills
+| +-BMAD is ready to use!------------------------------------------------------+
+| |    ✓  Shared scripts                                                       |
+| |    ✓  BMad Core Module (v6.12.1, installed)                                |
+| |    ✓  BMad Method (v6.12.1, installed)                                     |
+| |    ✓  Module directories                                                   |
+| |    ✓  Configurations (generated)                                           |
+| |    ✓  Help catalog                                                         |
+| |    ✓  codex (29 skills → .agents/skills)                                   |
+| |                                                                            |
+| |    Installed to: {user-home}\Documents\Codex\2026-11-25\lao\outputs\ca  |
+| |  mpus-event-signup\_bmad                                                   |
+| |                                                                            |
+| |    Get started:                                                            |
+| |      1. Launch your AI agent from your project folder                      |
+| |      2. Not sure what to do? Invoke the bmad-help skill and ask it what    |
+| |  to do!                                                                    |
+| |                                                                            |
+| |      Blog, Docs and Guides: https://bmadcode.com/                          |
+| |      Community: https://discord.gg/gk8jAdXWmj                              |
+| +----------------------------------------------------------------------------+
