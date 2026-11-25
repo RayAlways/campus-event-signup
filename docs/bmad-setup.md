@@ -98,6 +98,6 @@ uv run _bmad/scripts/resolve_config.py --project-root $bmadProjectRoot --key cor
 | `bmad-build`、`bmad-code-review` | 实施与评审 |
 | `bmad-retrospective` | 结合实际过程证据复盘 |
 
-产品简报仍为初稿，安装之后已使用 `bmad-product-brief` 的 Update 流程增加发起者审核模式，并记录对应的 memlog 与 D-003。接下来先完善尚未确定的规则、真实使用场景和组员分工，再启动 `bmad-prd`。本次配置及简报修订没有生成 PRD、架构、故事或软件实现。
+产品简报仍为初稿，安装之后已使用 `bmad-product-brief` 的 Update 流程增加发起者审核模式，并记录对应的 memlog 与 D-003。随后已启动 `bmad-prd` 快速初稿，并补充 D-004 至 D-006；具体入口见 README。PRD 假设、真实使用场景和组员分工仍待审阅或补充；架构、故事和软件尚未实施。
 
 课程特有要求继续以作业核对表为准。若 BMAD 默认输出路径或格式与课程命名不同，应在 README 中提供明确入口；课程要求的 `project-context.md`、根目录决策日志及复盘不能因工具默认行为不同而省略。
