@@ -1,0 +1,27 @@
+# Java build outputs
+target/
+build/
+out/
+*.class
+*.log
+
+# Local configuration and credentials
+.env
+.env.*
+!.env.example
+!.env.sample
+application-local.properties
+application-local.yml
+application-local.yaml
+
+# IDE and operating system files
+.idea/
+*.iml
+.vscode/
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Local dependency caches
+.gradle/
+node_modules/
