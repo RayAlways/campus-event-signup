@@ -20,7 +20,7 @@
 | 功能需求编号、至少 2 条可测非功能需求 | [PRD](../_bmad-output/planning-artifacts/prds/prd-campus-event-signup-2026-11-25/prd.md) | 已形成当前基线，23 条 FR、4 条 NFR；少量保留项在故事及测试计划前复核；软件尚未实现验证 |
 | 至少 1 个并发或一致性风险点 | PRD、架构与并发测试 | 已设计活动根锁、共享事务、队列顺序和通知一致性方案，尚未实现验证 |
 | 至少 5 条架构决策，每条包含被否决的备选方案及理由 | [架构说明](../_bmad-output/planning-artifacts/architecture.md)、[ADR](../_bmad-output/planning-artifacts/architecture/architecture-campus-event-signup-2026-11-26/adrs.md) | 已有 8 条初稿，均含备选、理由、代价和验证计划；高层组合已选，其余技术机制待用户审阅 |
-| 至少 3 个史诗、12 个故事，可测试的验收标准 | epics.md 与故事文件 | 待架构后正式拆分 |
+| 至少 3 个史诗、12 个故事，可测试的验收标准 | [epics.md](../_bmad-output/planning-artifacts/epics.md) 与后续故事文件 | 已完成输入检查和需求提取，等待清单确认；正式史诗、故事与 AC 尚未建立，数量要求尚未满足 |
 | 技术栈版本与至少 8 条具体实现规则 | project-context.md | 待完成 |
 | 两个冲刺，状态持续更新，多次真实提交 | sprint-status.yaml 与 Git 历史 | 仅有建议安排，尚未执行 |
 | 源码可按 README 运行，每条 NFR 有测试证据 | 源码、测试、结果记录 | 待完成 |

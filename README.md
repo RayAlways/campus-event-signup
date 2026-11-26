@@ -33,7 +33,7 @@
 | [PRD](_bmad-output/planning-artifacts/prds/prd-campus-event-signup-2026-11-25/prd.md) | 编号需求与可测试的质量要求 | 已定稿为当前基线，23 条 FR、4 条 NFR；少量保留项在故事及测试设计前复核，不代表实现和测试已完成 |
 | [架构说明](_bmad-output/planning-artifacts/architecture.md) | 组件、数据关系、一致性与验证方案 | 快速初稿，高层方案已选；技术机制待审阅，尚未生成实现 |
 | [架构约束](_bmad-output/planning-artifacts/architecture/architecture-campus-event-signup-2026-11-26/ARCHITECTURE-SPINE.md)与 [8 条 ADR](_bmad-output/planning-artifacts/architecture/architecture-campus-event-signup-2026-11-26/adrs.md) | 固定共享规则并说明备选、理由和代价 | 初稿；版本来源已核查，运行兼容性待实测 |
-| 史诗、故事与冲刺状态 | 工作拆分与迭代证据 | 待完成 |
+| [史诗与故事规划](_bmad-output/planning-artifacts/epics.md) | 需求清单、后续工作拆分及覆盖关系 | 已提取 23 FR、4 NFR 和 16 项架构输入，等待清单确认；正式史诗、故事及冲刺尚未建立 |
 | 源码、测试与评审 | 功能、质量和修复证据 | 待完成 |
 | 实验 A 与复盘 | 对照测量及规划成本收益分析 | 待完成 |
 
@@ -56,7 +56,7 @@
 
 ## AI 使用声明
 
-截至当前，使用 Codex 辅助梳理课程材料、讨论选题、起草项目文档、创建 GitHub 仓库、上传准备材料并配置 BMAD 6.12.1。已使用 bmad-product-brief、bmad-prd，并按用户选择使用 bmad-architecture 快速起草架构与 ADR；通过官方 memlog 脚本记录确认、假设和修订。已核查官方技术资料及脚手架内容，未生成本项目实现、编译应用或运行集成测试，未执行故事拆分及冲刺，也未完成真实用户验证。具体模型版本尚未记录，需按实际界面补充。第三方 BMAD 技能与脚本属于工具依赖，不作为本组原创软件实现。后续继续保存关键会话，并如实声明代码和测试的 AI 使用情况。
+截至当前，使用 Codex 辅助梳理课程材料、讨论选题、起草项目文档、创建 GitHub 仓库、上传准备材料并配置 BMAD 6.12.1。已使用 bmad-product-brief、bmad-prd，并按用户选择使用 bmad-architecture 快速起草架构与 ADR；通过官方 memlog 脚本记录确认、假设和修订。已进入 bmad-create-epics-and-stories 的输入检查和需求提取，尚待清单确认，未创建正式史诗/故事或执行冲刺。已核查官方技术资料及脚手架内容，未生成本项目实现、编译应用或运行集成测试，也未完成真实用户验证。具体模型版本尚未记录，需按实际界面补充。第三方 BMAD 技能与脚本属于工具依赖，不作为本组原创软件实现。后续继续保存关键会话，并如实声明代码和测试的 AI 使用情况。
 
 ## 待解决事项
 
