@@ -20,12 +20,12 @@
 | 功能需求编号、至少 2 条可测非功能需求 | [PRD](../_bmad-output/planning-artifacts/prds/prd-campus-event-signup-2026-11-25/prd.md) | 已形成当前基线，23 条 FR、4 条 NFR；少量保留项在故事及测试计划前复核；软件尚未实现验证 |
 | 至少 1 个并发或一致性风险点 | PRD、架构与并发测试 | 已设计活动根锁、共享事务、队列顺序和通知一致性方案，尚未实现验证 |
 | 至少 5 条架构决策，每条包含被否决的备选方案及理由 | [架构说明](../_bmad-output/planning-artifacts/architecture.md)、[ADR](../_bmad-output/planning-artifacts/architecture/architecture-campus-event-signup-2026-11-26/adrs.md) | 已有 8 条初稿，均含备选、理由、代价和验证计划；高层组合已选，其余技术机制待用户审阅 |
-| 至少 3 个史诗、12 个故事，可测试的验收标准 | [epics.md](../_bmad-output/planning-artifacts/epics.md) 与后续故事文件 | 已完成输入检查和需求提取，等待清单确认；正式史诗、故事与 AC 尚未建立，数量要求尚未满足 |
+| 至少 3 个史诗、12 个故事，可测试的验收标准 | [epics.md](../_bmad-output/planning-artifacts/epics.md) 与后续故事文件 | 输入已确认，提出 3 个史诗及完整 FR 对应关系，等待分组确认；故事和 AC 尚未建立，整体要求尚未完成 |
 | 技术栈版本与至少 8 条具体实现规则 | project-context.md | 待完成 |
 | 两个冲刺，状态持续更新，多次真实提交 | sprint-status.yaml 与 Git 历史 | 仅有建议安排，尚未执行 |
 | 源码可按 README 运行，每条 NFR 有测试证据 | 源码、测试、结果记录 | 待完成 |
-| 需求、ADR、故事、测试之间可追溯 | 编号引用与追溯关系 | 已建立 FR/NFR→AD/ADR 引用；故事与实际测试证据待补充 |
-| 至少 15 条决策，至少 5 条否决或实质修改 AI 输出 | decision-log.md 与会话证据 | 已记录 14 条，其中 D-003、D-007 至 D-010 为 5 条实质修改；技术 ADR 不冒充人工决定，剩余记录须真实积累 |
+| 需求、ADR、故事、测试之间可追溯 | 编号引用与追溯关系 | 已建立 FR/NFR→AD/ADR 引用及 FR→建议史诗对应关系；故事与实际测试证据待补充 |
+| 至少 15 条决策，至少 5 条否决或实质修改 AI 输出 | decision-log.md 与会话证据 | 已记录 15 条，其中 D-003、D-007 至 D-010 为 5 条实质修改；D-015 为本次输入确认，技术 ADR 不冒充人工决定；后续效果仍待验证 |
 | 实验 A，对照可比、控制条件、相同评审标准 | 实验记录与 retrospective.md | 待完成 |
 | 实验 A 五项指标及可信结论，说明局限 | 实验原始记录与 retrospective.md | 待完成 |
 | 度量与复盘：规划成本收益、项目规则作用与改进 | retrospective.md | 待完成 |
