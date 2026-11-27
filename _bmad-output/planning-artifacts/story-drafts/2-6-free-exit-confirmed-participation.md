@@ -2,11 +2,14 @@
 storyId: '2.6'
 epic: 2
 title: 已报名成功者按自由退出策略退出
-status: draft
-approvalStatus: pending
+status: approved
+approvalStatus: approved
 implementationStatus: not-started
 created: 2026-11-27
 updated: 2026-11-27
+approvedOn: 2026-11-27
+approvalDecision: D-028
+canonicalDocument: ../epics.md
 dependsOn: ['1.1', '1.2', '1.3', '1.4', '1.5', '2.1', '2.2', '2.3', '2.4', '2.5']
 requirements: [FR-13, FR-15, FR-16, FR-17, FR-18, NFR-01, NFR-02, NFR-03]
 architecture: [AD-1, AD-2, AD-3, AD-4, AD-5, AD-7, AD-8]
@@ -19,7 +22,7 @@ As a 已报名成功但临时无法参加的同学，
 I want 在活动允许自由退出且尚未开始时自行退出，
 So that 明确结束本次参加并释放名额，供其他符合规则的人使用。
 
-本稿待审。D-027 只批准 Story 2.5，不批准本稿。前置为十条已批准规范，当前活动设置保持不变；先到先得成功与审核通过成功均已可由前置故事产生，本故事对两者使用同一自由退出规则。不依赖未来退出申请、重报、模式迁移或通知代码，不新增退出理由或发起者审批。
+本文件保留已批准审阅快照。用户于 2026-11-27 回复“通过”，批准 Story 2.6（D-028）；正式维护入口为 epics.md，本文件不再独立演进。规范获批不等于实现或测试完成。前置为十条已批准规范，当前活动设置保持不变；先到先得成功与审核通过成功均已可由前置故事产生，本故事对两者使用同一自由退出规则。不依赖未来退出申请、重报、模式迁移或通知代码，不新增退出理由或发起者审批。
 
 **Acceptance Criteria:**
 
@@ -101,12 +104,12 @@ So that 明确结束本次参加并释放名额，供其他符合规则的人使
 **Then** 保存两种报名来源下 FREE 退出、受限策略拒绝直退、待审不可直退、截止后/开始边界、释放后新报名或手动通过、双重退出、旧指针、身份隔离、结果查询、回滚与正常重启的实际证据，
 **And** 只增加当前 EXITED 路径和所需退出时点/约束，不预建退出请求、队列或通知表；实际并发请求数、轮次及环境如实记录，不把 A-6 预算或夹具写成运行结果，
 **And** Epic 3 开放策略变更和候补迁移时，须同时将此直接退出接入原待审退出请求的关闭/指针清理和旧候补同步补录；不能先开放变更后再等待未来补保护，当前不依赖其代码，
-**And** 回归两种报名、参加审核、撤回和管理读取，当前只是待审规范，没有运行证据，不直接标记 ready-for-dev 或软件验收通过。
+**And** 回归两种报名、参加审核、撤回和管理读取，当前仅规范获批，没有运行证据，不直接标记 ready-for-dev 或软件验收通过。
 
-#### 接口增量建议
+#### 已确认的接口增量
 
 `POST /api/activities/{activityId}/registrations/{attemptId}/exit`：会话本人直接退出，携带 expectedVersion 与 Idempotency-Key，成功 200、EXITED/版本；不接受退出理由、目标用户或期望新状态。受限退出请求使用后续独立流程，不能由此接口自动生成。
 
 继续扩展本人最小结果入口及发起者管理读取，提供当前成功资格与最近 EXITED 的准确区分；保持既有 BIGINT 字符串、UTC 时间、北京时间显示、JSON/HTTP 和 CSRF 规则。精确字段与错误码先进入共同契约，由两位成员核对后实施。
 
-来源：[PRD FR-13/FR-15/FR-17/FR-18 与 NFR](../prds/prd-campus-event-signup-2026-11-25/prd.md)、[已批准故事](../epics.md)、[架构约束](../architecture/architecture-campus-event-signup-2026-11-26/ARCHITECTURE-SPINE.md)。以上均为待审规范及验证计划，尚未实现或运行测试。
+来源：[PRD FR-13/FR-15/FR-17/FR-18 与 NFR](../prds/prd-campus-event-signup-2026-11-25/prd.md)、[已批准故事](../epics.md)、[架构约束](../architecture/architecture-campus-event-signup-2026-11-26/ARCHITECTURE-SPINE.md)。以上为已批准规范及待执行验证计划，尚未实现或运行测试。
