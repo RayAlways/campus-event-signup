@@ -2,11 +2,14 @@
 storyId: '2.5'
 epic: 2
 title: 本人撤回尚未入名单的参加申请
-status: draft
-approvalStatus: pending
+status: approved
+approvalStatus: approved
 implementationStatus: not-started
 created: 2026-11-27
 updated: 2026-11-27
+approvedOn: 2026-11-27
+approvalDecision: D-027
+canonicalDocument: ../epics.md
 dependsOn: ['1.1', '1.2', '1.3', '1.4', '1.5', '2.1', '2.2', '2.3', '2.4']
 requirements: [FR-12, FR-15, FR-17, NFR-01, NFR-02, NFR-03]
 architecture: [AD-1, AD-2, AD-3, AD-4, AD-5, AD-7, AD-8]
@@ -19,7 +22,7 @@ As a 尚未进入活动成功名单的申请人，
 I want 在活动开始前自行撤回参加申请，
 So that 不再等待审核，也不会在放弃参加后仍被录入名单。
 
-本稿待审。D-026 只批准 Story 2.4 及拒绝理由输入限制，不批准本稿。前置为九条已批准规范；本故事交付现有审核模式 PENDING 的撤回，以及与已存在的通过/拒绝操作的真实竞争。WAITLISTED 由 Epic 3 模式迁移产生时，再同时接入候补撤回，既定规则不删除。当前不依赖未来退出或重报页面，不新增撤回理由或审批门槛。
+本文件保留已批准审阅快照。用户于 2026-11-27 回复“通过”，批准 Story 2.5（D-027）；正式维护入口为 epics.md，本文件不再独立演进。规范获批不等于实现或测试完成。前置为九条已批准规范；本故事交付现有审核模式 PENDING 的撤回，以及与已存在的通过/拒绝操作的真实竞争。WAITLISTED 由 Epic 3 模式迁移产生时，再同时接入候补撤回，既定规则不删除。当前不依赖未来退出或重报页面，不新增撤回理由或审批门槛。
 
 **Acceptance Criteria:**
 
@@ -92,12 +95,12 @@ So that 不再等待审核，也不会在放弃参加后仍被录入名单。
 **Then** 保存截止后撤回、两种退出策略下的待审撤回、开始边界、与通过/拒绝竞争、同/异键重试、旧指针/版本、他人拒绝访问、结果读取、回滚与正常重启的实际证据，
 **And** 仅补当前 WITHDRAWN 路径及必要撤回时点/索引、当前指针和既有回执，不预建退出请求、候补或通知表，不要求未来故事代码，
 **And** Epic 3 在开放真实 WAITLISTED 的同一增量中接入候补撤回与补录竞争；已确认的“未入名单且活动未开始可撤回”覆盖候补，不能因当前仅有 PENDING 实现而删除候补规则，
-**And** 并发记录实际请求数、轮次及环境，不把 A-6 建议预算或测试夹具写成已测结果；当前只是待审规范，未实现或运行，不直接标为 ready-for-dev 或软件验收通过。
+**And** 并发记录实际请求数、轮次及环境，不把 A-6 建议预算或测试夹具写成已测结果；当前仅规范获批，未实现或运行，不直接标为 ready-for-dev 或软件验收通过。
 
-#### 接口增量建议
+#### 已确认的接口增量
 
 `POST /api/activities/{activityId}/registrations/{attemptId}/withdraw`：会话本人撤回，携带 expectedVersion 与 Idempotency-Key，成功为 200 和 WITHDRAWN/版本。不接受撤回理由、目标用户或期望新状态；精确 JSON 和错误码纳入共同契约，两位成员核对后实施。
 
 继续扩展既有 `GET /api/activities/{activityId}/my-participation`：保持“当前尝试”和“无当前时的最近终态”区分，新增撤回结果，不另起依赖未来完整历史的页面。管理读取也在本次接入真实 WITHDRAWN；通过/拒绝操作继续校验当前指针/状态/版本，原受理时间与序号不得因撤回重置。
 
-来源：[PRD FR-12/FR-15/FR-17 与 NFR](../prds/prd-campus-event-signup-2026-11-25/prd.md)、[已批准故事](../epics.md)、[架构约束](../architecture/architecture-campus-event-signup-2026-11-26/ARCHITECTURE-SPINE.md)。以上均为待审规范及验证计划，尚未实现或运行测试。
+来源：[PRD FR-12/FR-15/FR-17 与 NFR](../prds/prd-campus-event-signup-2026-11-25/prd.md)、[已批准故事](../epics.md)、[架构约束](../architecture/architecture-campus-event-signup-2026-11-26/ARCHITECTURE-SPINE.md)。以上为已批准规范及待执行验证计划，尚未实现或运行测试。
