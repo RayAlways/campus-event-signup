@@ -2,11 +2,14 @@
 storyId: '1.1'
 epic: 1
 title: 通过网页注册账号
-status: draft
-approvalStatus: pending
+status: approved
+approvalStatus: approved
 implementationStatus: not-started
 created: 2026-11-26
-updated: 2026-11-26
+updated: 2026-11-27
+approvedOn: 2026-11-27
+approvalDecision: D-017
+canonicalDocument: ../epics.md
 dependsOn: []
 requirements: [FR-01, NFR-02, NFR-03]
 architecture: [AD-1, AD-5, AD-7, AD-8]
@@ -19,7 +22,7 @@ As a 班级或社团的同学，
 I want 通过网页填写用户名、昵称和密码，创建自己的账号，
 So that 后续可以登录并以本人身份发起或参加活动。
 
-本条为待审阅初稿，尚未批准、实施或测试。首次基础搭建采用已核查的官方 Spring Initializr / create-vue，必须交付可实际注册的页面与持久化接口；不只交付空项目，也不预建全部业务表。注册结果在本故事内即可验证，不依赖后续登录故事。
+本文件保留已审阅快照。用户于 2026-11-27 回复“通过”，确认本故事及其输入约定（D-017）；正式维护入口为 epics.md 中的 Story 1.1，本文件不再独立演进。规范获批不表示已经实施、运行或测试。首次基础搭建采用已核查的官方 Spring Initializr / create-vue，必须交付可实际注册的页面与持久化接口；不只交付空项目，也不预建全部业务表。注册结果在本故事内即可验证，不依赖后续登录故事。
 
 **Acceptance Criteria:**
 
@@ -29,7 +32,7 @@ So that 后续可以登录并以本人身份发起或参加活动。
 **When** 开发者从干净检出目录按 README 的实际步骤初始化数据库并启动，
 **Then** 浏览器能打开真实注册表单，包含用户名、昵称和密码输入及提交入口，
 **And** 页面调用本项目后端，连接真实 MySQL；不是 Mock 返回或静态“注册成功”，
-**And** 所有必需配置有无真实凭据的示例，README 命令须由本故事执行验证后填写，不把计划命令写成已经验证。
+**And** 所有必需配置均提供不含真实凭据的示例，README 命令须由本故事执行验证后填写，不把计划命令写成已经验证。
 
 #### AC-1.1-02 合法输入创建一个普通账号
 
@@ -88,27 +91,27 @@ So that 后续可以登录并以本人身份发起或参加活动。
 **And** 保留真实 MySQL 上注册成功、无效输入、重复/并发重复、CSRF、密码保护及重启的验证结果，并记录实际环境与失败响应，
 **And** 没有实现后续活动或报名功能，没有把本故事的账号并发验证当成 NFR-01 最后名额验证已完成。
 
-#### 本故事的建议输入约定（待本次审阅确认）
+#### 本故事的输入约定（2026-11-27 已确认）
 
-PRD 只确认了字段及唯一性；以下是为接口和存储补充的初稿建议，**尚不是已确认的产品规则**：
+以下接口和存储输入约定已由用户在本次审阅中确认，并同步回 PRD 的 FR-01：
 
-| 字段 | 建议约定 |
+| 字段 | 已确认约定 |
 |---|---|
 | 用户名 | 去首尾空白后为 3–32 个英文字母、数字或下划线；按小写标准化后保存并判重，因此 Alice_01 与 alice_01 不能注册为两个账号 |
 | 昵称 | 去首尾空白后为 1–32 个 Unicode 码点，支持中文；不要求唯一 |
 | 密码 | 不全为空白，至少 8 个 Unicode 码点，UTF-8 编码至多 72 字节；保存前不裁剪或改变原值，超限明确拒绝，不静默截断 |
 
-密码的字节上限配合架构草稿的 BCrypt 建议；它和用户名规则都需在实施前确认。若用户调整约定，先更新本故事及接口约定，再实现与测试，不把边界留给前后端各自猜测。
+密码的字节上限配合本故事采用的 BCrypt 注册侧编码方案；此确认仅承接本故事展示的范围，不把架构全部机制和环境可用性一并标为通过。若后续调整输入约定，先记录变更并更新正式故事及接口约定，再实现与测试，不由前后端各自猜测。
 
-72 字节限制已核对 [OWASP 的 BCrypt 输入说明](https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html#input-limits-of-bcrypt)，编码器能力见 [Spring Security API](https://docs.spring.io/spring-security/reference/api/java/org/springframework/security/crypto/bcrypt/BCryptPasswordEncoder.html)。用户名/昵称长度与密码最少 8 个码点是本项目的待审阅建议，不是这些文档规定的默认产品规则。
+72 字节限制已核对 [OWASP 的 BCrypt 输入说明](https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html#input-limits-of-bcrypt)，编码器能力见 [Spring Security API](https://docs.spring.io/spring-security/reference/api/java/org/springframework/security/crypto/bcrypt/BCryptPasswordEncoder.html)。用户名/昵称长度与密码最少 8 个码点是本项目本次确认的输入约定，不是这些文档规定的默认产品规则。
 
-#### 实施边界与建议契约
+#### 实施边界与接口约定
 
-- **前置：**无前置故事；JDK/数据库的实际供应、T-1/T-2 及本故事输入建议待审阅，当前不标记 ready-for-dev。
+- **前置：**无前置故事；本故事规范已批准，但 JDK/数据库实际供应、精确接口契约和环境验证仍待实施准备，不因本次审阅直接标记 ready-for-dev。
 - **基础：**采用 [架构约束](../architecture/architecture-campus-event-signup-2026-11-26/ARCHITECTURE-SPINE.md) 和 [版本核查](../architecture/architecture-campus-event-signup-2026-11-26/version-research.md) 中的种子建议；生成时复核实际可用性，不能静默换数据库或跨主版本升级。此处不声称已经安装或构建。
-- **接口建议：**`GET /api/auth/csrf` 取得令牌；`POST /api/auth/register` 采用 JSON，成功 201、字段错误 400、重复 409、CSRF 错误 403；沿用 AD-7 的响应/错误结构。精确字段和示例需在实施前写进单一接口契约并由两位成员共享。
+- **接口约定：**`GET /api/auth/csrf` 取得令牌；`POST /api/auth/register` 采用 JSON，成功 201、字段错误 400、重复 409、CSRF 错误 403；沿用 AD-7 的响应/错误结构。精确字段和示例需在实施前写进单一接口契约并由两位成员共享。
 - **数据：**身份模块拥有用户数据；使用 Flyway 建当前所需结构，用户名以标准化值做唯一约束；不收集 PRD 之外的身份资料。
 - **完成判断：**对应 AC 全部验证且证据可复现，代码经评审后才可计完成；当前仅起草了验收标准，没有验证结果。
 - **不在范围：**登录/退出、找回密码、修改资料、活动发布、报名、独立管理员；不为方便演示加入未要求的预置权限账号。
 
-来源：[PRD FR-01 / NFR-02 / NFR-03](../prds/prd-campus-event-signup-2026-11-25/prd.md)、[已确认的史诗分组](../epics.md)。本草稿审阅通过后才并入 epics.md 的正式故事区。
+来源：[PRD FR-01 / NFR-02 / NFR-03](../prds/prd-campus-event-signup-2026-11-25/prd.md)、[正式故事与史诗清单](../epics.md)。本文件为审阅存档，后续修改以正式故事区及变更记录为准。
