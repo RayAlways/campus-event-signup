@@ -2,11 +2,14 @@
 storyId: '1.2'
 epic: 1
 title: 登录并安全退出登录
-status: draft
-approvalStatus: pending
+status: approved
+approvalStatus: approved
 implementationStatus: not-started
 created: 2026-11-27
 updated: 2026-11-27
+approvedOn: 2026-11-27
+approvalDecision: D-018
+canonicalDocument: ../epics.md
 dependsOn: ['1.1']
 requirements: [FR-01, FR-02, NFR-02, NFR-03]
 architecture: [AD-1, AD-5, AD-7, AD-8]
@@ -19,7 +22,7 @@ As a 已经注册的同学，
 I want 使用自己的用户名和密码登录，并在使用后退出，
 So that 系统能够识别本人，且退出后的旧凭据不能继续访问需登录的能力。
 
-本条为待审阅草稿，尚未批准、实施或测试。唯一前置故事为 1.1；通过当前身份接口和测试作用域受保护处理器即可独立验证会话，不依赖未来的活动、报名或管理接口。用户名和密码沿用 D-017 已确认的处理方式，不重新提议另一套标准化规则。
+本文件保留已审阅快照。用户于 2026-11-27 回复“通过”，确认 Story 1.2（D-018）；正式维护入口为 epics.md，本文件不再独立演进。规范获批不表示已经实施或测试。唯一前置故事为 1.1；通过当前身份接口和测试作用域受保护处理器即可独立验证会话，不依赖未来的活动、报名或管理接口。用户名和密码沿用 D-017 已确认的处理方式。
 
 **Acceptance Criteria:**
 
@@ -89,19 +92,19 @@ So that 系统能够识别本人，且退出后的旧凭据不能继续访问需
 **And** 不能仅依赖手工伪造“已认证用户”的测试注解代替登录/退出链路；受保护测试处理器在交付物中不存在，
 **And** 注册功能回归通过，没有依赖尚未创建的 Story 1.3 或后续史诗；本故事不代表未来活动资源权限已全部验证。
 
-#### 接口及实施建议（待本故事审阅）
+#### 已确认的接口及实施约定
 
-| 接口 | 建议约定 |
+| 接口 | 已确认约定 |
 |---|---|
 | GET /api/auth/csrf | 沿用 1.1 的令牌获取流程；登录与退出后重新获取 |
 | POST /api/auth/login | 表单编码的 username/password，带 CSRF Header；成功 200、错误凭据 401、字段错误 400、CSRF 错误 403；均为 JSON |
 | GET /api/auth/me | 从服务端会话返回本人 ID/用户名/昵称；有效 200，未登录或失效 401；不能由请求 userId 决定本人 |
 | POST /api/auth/logout | 合法 CSRF 请求成功时返回 200 JSON并注销当前会话；不以 GET 执行退出 |
 
-本草稿不为“已退出后再次点击退出”强加新的业务承诺：前端以服务端身份和有效 CSRF 状态恢复界面，不将旧令牌拒绝误报成仍在登录。精确字段、错误码、Cookie 配置和测试路径须在实施前纳入单一接口契约。
+本故事不为“已退出后再次点击退出”强加新的业务承诺：前端以服务端身份和有效 CSRF 状态恢复界面，不将旧令牌拒绝误报成仍在登录。精确字段、错误码、Cookie 配置和测试路径须在实施前纳入单一接口契约，环境供应与运行验证仍待完成，不因规范获批直接标记 ready-for-dev。
 
 框架依据已核对 [会话持久与身份恢复](https://docs.spring.io/spring-security/reference/servlet/authentication/session-management.html)、[退出处理](https://docs.spring.io/spring-security/reference/servlet/authentication/logout.html)、[CSRF](https://docs.spring.io/spring-security/reference/servlet/exploits/csrf.html)。若自定义认证入口，必须正确保存认证上下文，不能只设置当前线程；本项目要求的 JSON 成功/失败响应也需要明确配置，不能把框架默认页面或跳转当作最终接口。
 
-**边界：**本故事只交付登录、当前身份与退出；不包含找回密码、修改资料、第三方登录、多端会话控制、活动管理或报名。以上 AC 为待审阅规范，不是已经执行的测试结果。
+**边界：**本故事只交付登录、当前身份与退出；不包含找回密码、修改资料、第三方登录、多端会话控制、活动管理或报名。以上 AC 为已批准规范，不是已经执行的测试结果。
 
 来源：[PRD FR-01/FR-02 与 NFR-02/NFR-03](../prds/prd-campus-event-signup-2026-11-25/prd.md)、[正式 Story 1.1](../epics.md#story-11-通过网页注册账号)、[架构 AD-5/AD-7/AD-8](../architecture/architecture-campus-event-signup-2026-11-26/ARCHITECTURE-SPINE.md)。
