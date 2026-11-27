@@ -2,11 +2,14 @@
 storyId: '2.2'
 epic: 2
 title: 提交参加审核申请并查看待审状态
-status: draft
-approvalStatus: pending
+status: approved
+approvalStatus: approved
 implementationStatus: not-started
 created: 2026-11-27
 updated: 2026-11-27
+approvedOn: 2026-11-27
+approvalDecision: D-024
+canonicalDocument: ../epics.md
 dependsOn: ['1.1', '1.2', '1.3', '1.4', '1.5', '2.1']
 requirements: [FR-08, FR-15, FR-17, FR-18, NFR-01, NFR-02, NFR-03]
 architecture: [AD-1, AD-2, AD-3, AD-4, AD-5, AD-7, AD-8]
@@ -19,7 +22,7 @@ As a 已登录、希望参加需审核活动的同学，
 I want 在报名期内提交参加申请并明确看到待审核状态，
 So that 知道申请已被系统接收，同时不会误以为已经取得活动名额。
 
-本稿待审。D-023 只批准 Story 2.1 及发起者自报名规则，不批准本稿。实施以前六条已批准规范为前置，扩展同一报名与本人状态入口；提交申请及读取结果不依赖未来发起者审核页面才能工作。活动设置在本阶段保持不变；不提前实现候补、模式修改、退出和通知。
+本文件保留已批准审阅快照。用户于 2026-11-27 回复“通过”，批准 Story 2.2（D-024）；正式维护入口为 epics.md，本文件不再独立演进。规范获批不等于实现或测试完成。实施以前六条已批准规范为前置，扩展同一报名与本人状态入口；提交申请及读取结果不依赖未来发起者审核页面才能工作。活动设置在本阶段保持不变；不提前实现候补、模式修改、退出和通知。
 
 **Acceptance Criteria:**
 
@@ -96,14 +99,14 @@ So that 知道申请已被系统接收，同时不会误以为已经取得活动
 **Then** 保存普通/满额提交、不占位、同人并发、同/异键重试、时限、模式意图、隐私、自申请、四种设置组合及重启的实际证据，
 **And** 只扩展现有尝试的 PENDING 路径、必需约束与既有接口，不提前建退出请求、名单管理、审核写入口或通知表；未来审核能力没有完成并不妨碍本故事独立提交和读取结果，
 **And** 回归 Story 2.1 真实直接占位、最后名额竞争、同人唯一与时限规则，不把所有活动统一改成待审核，
-**And** 实际测试环境、请求数和结果须记录；当前只是待审规范，没有运行证据，不直接标为 ready-for-dev 或通过验收。
+**And** 实际测试环境、请求数和结果须记录；当前仅规范获批，没有运行证据，不直接标为 ready-for-dev 或通过软件验收。
 
-#### 共同契约增量建议
+#### 已确认的共同契约增量
 
-继续使用 `POST /api/activities/{activityId}/registrations`，首次受理统一为 201、状态由服务端模式决定。建议请求体带 `expectedEnrollmentMode`，枚举沿用现有 FIRST_COME_FIRST_SERVED / APPROVAL_REQUIRED，用于拒绝过时操作意图；不是可编辑的业务设置。回执摘要包含该字段，重放优先于新命令模式/时限门槛，重放后再查询当前结果。
+继续使用 `POST /api/activities/{activityId}/registrations`，首次受理统一为 201、状态由服务端模式决定。D-024 已确认请求体带 `expectedEnrollmentMode`，枚举沿用现有 FIRST_COME_FIRST_SERVED / APPROVAL_REQUIRED，用于拒绝过时操作意图；不是可编辑的业务设置。回执摘要包含该字段，重放优先于新命令模式/时限门槛，重放后再查询当前结果。
 
 `GET /api/activities/{activityId}/my-participation` 增量返回 PENDING；前端同时显示活动参与条件和本人状态。精确 JSON、HTTP/错误码及兼容提示须先进入共同契约，再由两位成员核对；BIGINT 字符串、UTC 时间、北京时间显示、会话/CSRF 和秘密保护沿用既有约定。
 
 本故事不新增申请理由、附件、实名或申请材料要求；真实审核标准尚未提供，不编造。发起者查看/处理申请在后续故事实现，本条仅依赖既有活动与身份和当前参与数据。开始后停止处理与截止后仍可审核的实际审核写路径由对应故事验证；队列、公平迁移与取消增量仍在 Epic 3。
 
-来源：[PRD FR-08/FR-15/FR-17 与 NFR](../prds/prd-campus-event-signup-2026-11-25/prd.md)、[已批准故事](../epics.md)、[架构约束](../architecture/architecture-campus-event-signup-2026-11-26/ARCHITECTURE-SPINE.md)。以上均为待审规范和验证计划，尚未实现或运行测试。
+来源：[PRD FR-08/FR-15/FR-17 与 NFR](../prds/prd-campus-event-signup-2026-11-25/prd.md)、[已批准故事](../epics.md)、[架构约束](../architecture/architecture-campus-event-signup-2026-11-26/ARCHITECTURE-SPINE.md)。以上为已批准规范及待执行验证计划，尚未实现或运行测试。
