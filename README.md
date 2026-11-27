@@ -27,13 +27,13 @@
 | 材料 | 用途 | 状态 |
 |---|---|---|
 | [产品简报](_bmad-output/planning-artifacts/product-brief.md) | 界定问题、用户、目标、范围及待验证事项 | 初稿，业务假设待验证 |
-| [决策日志](decision-log.md) | 记录真实选择、依据与后续验证 | 已记录 24 条决定，其中 D-003、D-007 至 D-010 为 5 条实质修改；技术 ADR 不冒充人工决定，后续验证仍待执行 |
+| [决策日志](decision-log.md) | 记录真实选择、依据与后续验证 | 已记录 25 条决定，其中 D-003、D-007 至 D-010 为 5 条实质修改；技术 ADR 不冒充人工决定，后续验证仍待执行 |
 | [作业要求核对表](docs/assignment-checklist.md) | 对照课件和老师补充说明检查缺项 | 已建立 |
 | [BMAD 配置记录](docs/bmad-setup.md) | 固定版本、复现安装、组员使用方式与验证结果 | 已安装 core、bmm 和 29 个 Codex 技能 |
 | [PRD](_bmad-output/planning-artifacts/prds/prd-campus-event-signup-2026-11-25/prd.md) | 编号需求与可测试的质量要求 | 已定稿为当前基线，23 条 FR、4 条 NFR；少量保留项在故事及测试设计前复核，不代表实现和测试已完成 |
 | [架构说明](_bmad-output/planning-artifacts/architecture.md) | 组件、数据关系、一致性与验证方案 | 快速初稿，高层方案已选；技术机制待审阅，尚未生成实现 |
 | [架构约束](_bmad-output/planning-artifacts/architecture/architecture-campus-event-signup-2026-11-26/ARCHITECTURE-SPINE.md)与 [8 条 ADR](_bmad-output/planning-artifacts/architecture/architecture-campus-event-signup-2026-11-26/adrs.md) | 固定共享规则并说明备选、理由和代价 | 初稿；版本来源已核查，运行兼容性待实测 |
-| [史诗与故事规划](_bmad-output/planning-artifacts/epics.md) | 需求清单、用户价值分组及覆盖关系 | 共 7 条规范/61 组 AC 已批准（Epic 1 五条、Epic 2 的 2.1–2.2）；Story 2.3 的 9 组 AC 草稿待审，尚未实施或进入冲刺 |
+| [史诗与故事规划](_bmad-output/planning-artifacts/epics.md) | 需求清单、用户价值分组及覆盖关系 | 共 8 条规范/70 组 AC 已批准（Epic 1 五条、Epic 2 的 2.1–2.3）；Story 2.4 的 9 组 AC 草稿待审，尚未实施或进入冲刺 |
 | 源码、测试与评审 | 功能、质量和修复证据 | 待完成 |
 | 实验 A 与复盘 | 对照测量及规划成本收益分析 | 待完成 |
 
@@ -56,7 +56,7 @@
 
 ## AI 使用声明
 
-截至当前，使用 Codex 辅助梳理课程材料、讨论选题、起草项目文档、创建 GitHub 仓库、上传准备材料并配置 BMAD 6.12.1。已使用 bmad-product-brief、bmad-prd，并按用户选择使用 bmad-architecture 快速起草架构与 ADR；通过官方 memlog 脚本记录确认、假设和修订。bmad-create-epics-and-stories 的 Epic 1 已逐条审阅通过 5 条规范及 43 组 AC，已汇总覆盖并获准进入 Epic 2；Story 2.1–2.2 及自报名规则已获批，Story 2.3 草稿和名单字段建议待审，未执行冲刺。已核查官方技术资料及脚手架内容，未生成本项目实现、编译应用或运行集成测试，也未完成真实用户验证。具体模型版本尚未记录，需按实际界面补充。第三方 BMAD 技能与脚本属于工具依赖，不作为本组原创软件实现。后续继续保存关键会话，并如实声明代码和测试的 AI 使用情况。
+截至当前，使用 Codex 辅助梳理课程材料、讨论选题、起草项目文档、创建 GitHub 仓库、上传准备材料并配置 BMAD 6.12.1。已使用 bmad-product-brief、bmad-prd，并按用户选择使用 bmad-architecture 快速起草架构与 ADR；通过官方 memlog 脚本记录确认、假设和修订。bmad-create-epics-and-stories 的 Epic 1 已逐条审阅通过 5 条规范及 43 组 AC，已汇总覆盖并获准进入 Epic 2；Story 2.1–2.3、自报名及名单字段/排序已获批，Story 2.4 草稿待审，未执行冲刺。已核查官方技术资料及脚手架内容，未生成本项目实现、编译应用或运行集成测试，也未完成真实用户验证。具体模型版本尚未记录，需按实际界面补充。第三方 BMAD 技能与脚本属于工具依赖，不作为本组原创软件实现。后续继续保存关键会话，并如实声明代码和测试的 AI 使用情况。
 
 ## 待解决事项
 
